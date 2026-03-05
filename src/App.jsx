@@ -130,9 +130,11 @@ function App() {
       {!loggedIn ? (
         <div className="login-box">
           <h1>SYSTEM ACCESS</h1>
-          <input placeholder="Username" />
-          <input type="password" placeholder="Password" />
-          <button onClick={handleLogin}>AUTHENTICATE</button>
+          <form onSubmit={e => { e.preventDefault(); handleLogin(); }}>
+            <input className="login-input" placeholder="Username" />
+            <input className="login-input" type="password" placeholder="Password" />
+            <button type="submit" className="login-button">AUTHENTICATE</button>
+          </form>
           <p className="footer">Secure Engineering Node</p>
         </div>
       ) : (
